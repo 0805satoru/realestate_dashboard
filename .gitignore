@@ -1,4 +1,4 @@
 venv/
 credentials.json
 __pycache__/
-.streamlit/
+.DS_Store
