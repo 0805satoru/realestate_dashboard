@@ -76,7 +76,7 @@ st.divider()
 # ======================
 # 物件一覧
 # ======================
-st.caption("🏢 物件一覧")
+st.markdown("🏢 物件一覧")
 
 for _, row in properties_df.iterrows():
 
