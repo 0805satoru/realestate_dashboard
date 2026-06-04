@@ -5,7 +5,7 @@ import pandas as pd
 
 st.set_page_config(page_title="不動産ダッシュボード", layout="wide")
 
-st.title("🏠 不動産ダッシュボード")
+st.write("アプリ開始")
 
 # ======================
 # Google認証
@@ -15,18 +15,7 @@ scope = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-creds = Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"],
-    scopes=scope
-)
-
-client = gspread.authorize(creds)
-
-spreadsheet = client.open("不動産管理DB")
-
-
-#
-st.write("認証開始")
+st.write("認証前")
 
 creds = Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
@@ -42,4 +31,3 @@ st.write("gspread成功")
 spreadsheet = client.open("不動産管理DB")
 
 st.write("スプレッドシート接続成功")
-
