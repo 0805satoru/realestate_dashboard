@@ -24,6 +24,8 @@ client = gspread.authorize(creds)
 
 spreadsheet = client.open("不動産管理DB")
 
+
+#
 st.write("認証開始")
 
 creds = Credentials.from_service_account_info(
