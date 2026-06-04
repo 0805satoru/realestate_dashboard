@@ -5,7 +5,7 @@ import pandas as pd
 
 st.set_page_config(page_title="物件管理", layout="wide")
 
-st.title("🏠 物件管理")
+st.header("🏠 物件管理")
 
 # ======================
 # Google認証
