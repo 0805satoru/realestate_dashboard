@@ -6,6 +6,14 @@ import pandas as pd
 st.set_page_config(page_title="物件管理", layout="wide")
 
 st.header("🏠 物件管理")
+st.markdown(
+    """
+    <p style="font-size:20px; font-weight:bold; margin-bottom:0;">
+    🏢 物件管理
+    </p>
+    """,
+    unsafe_allow_html=True
+)
 
 # ======================
 # Google認証
