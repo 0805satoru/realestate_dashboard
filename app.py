@@ -7,7 +7,7 @@ st.set_page_config(page_title="物件管理", layout="wide")
 
 st.markdown(
     """
-    <p style="font-size:20px; font-weight:bold; margin-bottom:20;">
+    <p style="font-size:22px; font-weight:bold; margin-bottom:20;">
     🏢 不動産管理
     </p>
     """,
@@ -59,7 +59,7 @@ occupancy_rate = (
 # ======================
 # KPI表示（カード）
 # ======================
-st.markdown("**資産概要**")
+st.markdown("###資産概要")
 st.markdown(
     f"""
     **物件数** {total_properties}件　｜　
@@ -67,12 +67,11 @@ st.markdown(
     **入居率** {occupancy_rate:.1f}%
     """
 )
-st.divider()
 
 # ======================
 # 所有物件
 # ======================
-st.markdown("**所有物件**")
+st.markdown("###所有物件")
 
 for _, row in properties_df.iterrows():
 
