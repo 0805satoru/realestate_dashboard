@@ -59,7 +59,7 @@ occupancy_rate = (
 # ======================
 # KPI表示（カード）
 # ======================
-st.markdown("###資産概要")
+st.markdown("### 資産概要")
 st.markdown(
     f"""
     **物件数** {total_properties}件　｜　
@@ -71,7 +71,7 @@ st.markdown(
 # ======================
 # 所有物件
 # ======================
-st.markdown("###所有物件")
+st.markdown("### 所有物件")
 
 for _, row in properties_df.iterrows():
 
