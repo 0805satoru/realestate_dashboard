@@ -8,7 +8,7 @@ st.set_page_config(page_title="物件管理", layout="wide")
 st.markdown(
     """
     <p style="font-size:20px; font-weight:bold; margin-bottom:20;">
-    🏢 物件管理
+    🏢 不動産管理
     </p>
     """,
     unsafe_allow_html=True
@@ -59,6 +59,7 @@ occupancy_rate = (
 # ======================
 # KPI表示（カード）
 # ======================
+st.markdown("**資産概要**")
 st.markdown(
     f"""
     **物件数** {total_properties}件　｜　
