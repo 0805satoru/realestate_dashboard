@@ -7,7 +7,7 @@ st.set_page_config(page_title="物件管理", layout="wide")
 
 st.markdown(
     """
-    <p style="font-size:20px; font-weight:bold; margin-bottom:0;">
+    <p style="font-size:20px; font-weight:bold; margin-bottom:20;">
     🏢 物件管理
     </p>
     """,
@@ -66,13 +66,12 @@ st.markdown(
     **入居率** {occupancy_rate:.1f}%
     """
 )
-
 st.divider()
 
 # ======================
 # 所有物件
 # ======================
-st.markdown("### 所有物件")
+st.markdown("**所有物件**")
 
 for _, row in properties_df.iterrows():
 
