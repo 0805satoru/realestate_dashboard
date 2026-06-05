@@ -5,7 +5,6 @@ import pandas as pd
 
 st.set_page_config(page_title="物件管理", layout="wide")
 
-st.header("🏠 物件管理")
 st.markdown(
     """
     <p style="font-size:20px; font-weight:bold; margin-bottom:0;">
@@ -74,9 +73,9 @@ with col3:
 st.divider()
 
 # ======================
-# 物件一覧
+# 所有物件
 # ======================
-st.subheader("🏢 物件一覧")
+st.caption("所有物件")
 
 for _, row in properties_df.iterrows():
 
@@ -94,13 +93,13 @@ for _, row in properties_df.iterrows():
     col1, col2, col3 = st.columns([4, 1, 1])
 
     with col1:
-        st.write(f"🏠 {row['name']}")
+        st.markdown(f"**🏠 {row['name']}**")
 
     with col2:
-        st.write(f"{rate:.0f}%")
+        st.write(f"入居率 {rate:.0f}%")
 
     with col3:
-        if st.button("開く", key=row["property_id"]):
+        if st.button("詳細を見る", key=row["property_id"]):
 
             st.session_state["property_id"] = row["property_id"]
             st.switch_page("pages/property_detail.py")
