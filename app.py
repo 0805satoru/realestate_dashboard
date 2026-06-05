@@ -62,13 +62,16 @@ occupancy_rate = (
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.metric("物件数", total_properties)
+    st.markdown("**物件数**")
+    st.write(f"{total_properties}件")
 
 with col2:
-    st.metric("総戸数", total_units)
+    st.markdown("**総戸数**")
+    st.write(f"{total_units}戸")
 
 with col3:
-    st.metric("入居率", f"{occupancy_rate:.1f}%")
+    st.markdown("**入居率**")
+    st.write(f"{occupancy_rate:.1f}%")
 
 st.divider()
 
