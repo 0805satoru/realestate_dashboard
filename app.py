@@ -62,12 +62,11 @@ occupancy_rate = (
 st.markdown(
     """
     <p style="font-size:18px; font-weight:bold;">
-    資産概要
+    物件概要
     </p>
     """,
     unsafe_allow_html=True
 )
-st.markdown("### 物件概要")
 st.markdown(
     f"""
     **物件数** {total_properties}件　｜　
