@@ -72,7 +72,7 @@ st.divider()
 # ======================
 # 所有物件
 # ======================
-st.caption("所有物件")
+st.markdown("### 所有物件")
 
 for _, row in properties_df.iterrows():
 
