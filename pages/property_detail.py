@@ -86,7 +86,33 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown("<b>TEST</b>", unsafe_allow_html=True)
+st.markdown(
+    f"""
+    <div style="
+        margin-bottom:14px;
+        padding:4px 0;
+    ">
+
+        <div style="
+            font-size:22px;
+            font-weight:800;
+            line-height:1.2;
+        ">
+            🏠 {property_data['name']}
+        </div>
+
+        <div style="
+            color:#666;
+            font-size:13px;
+            margin-top:6px;
+        ">
+            📍 {property_data['address']} ｜ 🏢 {property_data['units']}戸
+        </div>
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # タブ
 tab1, tab2 = st.tabs([
