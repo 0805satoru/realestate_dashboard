@@ -92,7 +92,7 @@ with tab1:
         col1, col2 = st.columns([2, 1])
 
         with col1:
-            st.write(f"{row['room']}")
+            st.write(f"{row['room']}号室")
 
         with col2:
             new_status = st.selectbox(
@@ -104,9 +104,7 @@ with tab1:
 
         # 変更があった時だけ更新
         if new_status != row["status"]:
-
             cell = rooms_sheet.find(str(row["room_id"]))
-
             rooms_sheet.update_cell(
                 cell.row,
                 5,  # status列（A=1 ... E=5）
