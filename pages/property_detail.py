@@ -96,7 +96,7 @@ with tab1:
 
         with col2:
 
-            col_icon, col_select = st.columns([1, 4])
+            col_icon, col_select = st.columns([1, 3])
             status = row["status"]
 
             #色決め
@@ -123,7 +123,7 @@ with tab1:
                 st.markdown("""
                 <style>
                 div[data-testid="stSelectbox"] {
-                    width: 120px;
+                    width: 140px;
                 }
                 </style>
                 """, unsafe_allow_html=True)
