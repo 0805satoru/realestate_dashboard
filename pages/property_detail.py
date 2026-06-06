@@ -119,14 +119,15 @@ with tab1:
                     ["入居中", "空室"],
                     index=0 if row["status"] == "入居中" else 1,
                     key=f"status_{row['room_id']}"
+                    label_visibility="collapsed"
                 )
-                st.markdown("""
-                <style>
-                div[data-testid="stSelectbox"] {
-                    width: 120px;
-                }
-                </style>
-                """, unsafe_allow_html=True)
+                #st.markdown("""
+                #<style>
+                #div[data-testid="stSelectbox"] {
+                #    width: 120px;
+                #}
+                #</style>
+                #""", unsafe_allow_html=True)
 
             #st.markdown(
             #    f"<span style='color:{color}; font-weight:700;'>{icon}</span>",
