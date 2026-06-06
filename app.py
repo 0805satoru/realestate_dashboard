@@ -116,13 +116,8 @@ for _, row in properties_df.iterrows():
     with st.container(border=True):
 
         st.markdown(
-            f"<span style='color:{color}; font-weight:900; margin-right:6px;'>●</span>"
-            f"**🏠 {row['name']}**",
-            unsafe_allow_html=True
-        )
-        st.markdown(
             f"<div style='font-size:20px; font-weight:700;'>"
-            f"<span style='color:{color}; margin-right:6px;'>●</span>"
+            f"<span style='color:{color}; font-weight:900; margin-right:6px;'>●</span>"
             f"🏠 {row['name']}"
             f"</div>",
             unsafe_allow_html=True
