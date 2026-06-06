@@ -120,7 +120,7 @@ for _, row in properties_df.iterrows():
         with col1:
             st.markdown(
             f"<div style='font-size:10px; font-weight:700;'>"
-            f"🏠 {row['name']}"
+            #f"🏠 {row['name']}"
             f"</div>",
             unsafe_allow_html=True
         )
