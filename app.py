@@ -105,8 +105,8 @@ for _, row in properties_df.iterrows():
         st.markdown(f"**🏠 {row['name']}**")
 
         st.write(f"総戸数 {total}戸")
-        st.progress(rate / 100)
         st.write(f"入居率 {rate:.0f}%")
+        st.progress(rate / 100)
 
         if st.button("詳細を見る", key=row["property_id"]):
 
