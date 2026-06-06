@@ -86,6 +86,23 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown(
+    f"""
+    <div style="margin-bottom:10px;">
+
+        <div style="font-size:22px; font-weight:700;">
+            🏠 {property_data['name']}
+        </div>
+
+        <div style="color:gray; font-size:13px; margin-top:4px;">
+            📍 {property_data['address']} ｜ 🏠 {property_data['units']}戸
+        </div>
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 # タブ
 tab1, tab2 = st.tabs([
     "部屋情報",
