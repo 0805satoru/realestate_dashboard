@@ -118,7 +118,7 @@ with tab1:
                     "状態",
                     ["入居中", "空室"],
                     index=0 if row["status"] == "入居中" else 1,
-                    key=f"status_{row['room_id']}"
+                    key=f"status_{row['room_id']}",
                     label_visibility="collapsed"
                 )
                 #st.markdown("""
