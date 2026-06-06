@@ -100,16 +100,14 @@ for _, row in properties_df.iterrows():
 
     rate = (occupied / total * 100) if total > 0 else 0
 
-    col1, col2, col3 = st.columns([4, 1, 1])
+with st.container(border=True):
 
-    with col1:
-        st.markdown(f"**🏠 {row['name']}**")
+    st.markdown(f"**🏠 {row['name']}**")
 
-    with col2:
-        st.write(f"入居率 {rate:.0f}%")
+    st.write(f"総戸数 {total}戸")
+    st.write(f"入居率 {rate:.0f}%")
 
-    with col3:
-        if st.button("詳細を見る", key=row["property_id"]):
+    if st.button("詳細を見る", key=row["property_id"]):
 
-            st.session_state["property_id"] = row["property_id"]
-            st.switch_page("pages/property_detail.py")
+        st.session_state["property_id"] = row["property_id"]
+        st.switch_page("pages/property_detail.py")
