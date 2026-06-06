@@ -115,7 +115,7 @@ for _, row in properties_df.iterrows():
 
     with st.container(border=True):
 
-        col1, col2 = st.columns([3, 1])
+        col1, col2 = st.columns([6, 1])
 
         with col1:
             st.markdown(
@@ -136,6 +136,27 @@ for _, row in properties_df.iterrows():
             f"</div>",
             unsafe_allow_html=True
         )
+
+        col1, col2 = st.columns([6, 1])
+        with col1:
+            st.markdown(
+            f"""
+            <div style="
+                font-size:14px;
+                font-weight:700;
+                white-space:nowrap;
+                overflow:hidden;
+                text-overflow:ellipsis;
+            ">
+            🏠 {row['name']}
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        with col2:
+            st.button("詳細", key=row["property_id"], use_container_width=True)
+        
+        
         st.markdown(
             f"""
             <div style='margin-bottom:0px;'>
