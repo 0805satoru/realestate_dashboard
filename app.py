@@ -120,6 +120,13 @@ for _, row in properties_df.iterrows():
             f"**🏠 {row['name']}**",
             unsafe_allow_html=True
         )
+        st.markdown(
+            f"<div style='font-size:15px; font-weight:700;'>"
+            f"<span style='color:{color}; margin-right:6px;'>●</span>"
+            f"🏠 {row['name']}"
+            f"</div>",
+            unsafe_allow_html=True
+        )
 
         st.write(f"総戸数 {total}戸 ｜ 空室 {vacant}戸")
         st.write(f"入居率 {rate:.0f}%")
