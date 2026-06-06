@@ -142,8 +142,12 @@ for _, row in properties_df.iterrows():
             unsafe_allow_html=True
         )
         st.markdown(
-            f"<span style='color:{color}; font-weight:900; margin-right:6px;'>●</span>"
-            f"<div style='margin-bottom:0px;'>入居率 {rate:.0f}%</div>",
+            f"""
+            <div style='margin-bottom:0px;'>
+                <span style='color:{color}; font-weight:900; margin-right:6px;'>●</span>
+                <span style='font-weight:600;'>入居率 {rate:.0f}%</span>
+                </div>
+                """
             unsafe_allow_html=True
         )
         st.progress(rate / 100)
