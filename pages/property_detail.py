@@ -86,6 +86,12 @@ tab1, tab2 = st.tabs([
 with tab1:
 
     st.subheader("部屋情報")
+    st.markdown(
+            f"<div style='font-size:20px; font-weight:700;'>"
+            f"部屋情報"
+            f"</div>",
+        unsafe_allow_html=True
+        )
 
     for i, row in property_rooms.iterrows():
 
@@ -142,5 +148,5 @@ with tab2:
 
 st.divider()
 
-if st.button("← 物件一覧へ戻る"):
+if st.button("← 所有物件へ戻る"):
     st.switch_page("app.py")
