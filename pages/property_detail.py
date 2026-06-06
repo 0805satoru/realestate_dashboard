@@ -111,7 +111,7 @@ with tab1:
             )
 
             st.markdown(
-                f"<span style='color:{color}; font-weight:700;'>{icon} {status}</span>",
+                f"<span style='color:{color}; font-weight:700;'>{icon}</span>",
                 unsafe_allow_html=True
             )
 
