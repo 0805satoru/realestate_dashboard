@@ -86,6 +86,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown("<b>TEST</b>", unsafe_allow_html=True)
+
 # タブ
 tab1, tab2 = st.tabs([
     "部屋情報",
