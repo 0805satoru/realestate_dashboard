@@ -115,6 +115,22 @@ for _, row in properties_df.iterrows():
 
     with st.container(border=True):
 
+        col1, col2 = st.columns([4, 1])
+
+        with col1:
+            st.markdown(
+            f"<div style='font-size:20px; font-weight:700;'>"
+            f"<span style='color:{color}; font-weight:900; margin-right:6px;'>●</span>"
+            f"🏠 {row['name']}"
+            f"</div>",
+            unsafe_allow_html=True
+        )
+
+        with col2:
+            if st.button("詳細を見る", key=row["property_id"]):
+                st.session_state["property_id"] = row["property_id"]
+                st.switch_page("pages/property_detail.py")
+
         st.markdown(
             f"<div style='font-size:20px; font-weight:700;'>"
             f"<span style='color:{color}; font-weight:900; margin-right:6px;'>●</span>"
