@@ -7,7 +7,7 @@ st.set_page_config(page_title="物件管理", layout="wide")
 
 st.markdown(
     """
-    <p style="font-size:24px; font-weight:bold; margin-bottom:20;">
+    <p style="font-size:28px; font-weight:bold; margin-bottom:20;">
     🏢 不動産管理
     </p>
     """,
@@ -61,7 +61,7 @@ occupancy_rate = (
 # ======================
 st.markdown(
     """
-    <p style="font-size:18px; font-weight:bold;">
+    <p style="font-size:24px; font-weight:bold;">
     物件概要
     </p>
     """,
@@ -82,7 +82,7 @@ with st.container(border=True):
 # ======================
 st.markdown(
     """
-    <p style="font-size:18px; font-weight:bold;">
+    <p style="font-size:24px; font-weight:bold;">
     所有物件
     </p>
     """,
@@ -121,7 +121,7 @@ for _, row in properties_df.iterrows():
             unsafe_allow_html=True
         )
         st.markdown(
-            f"<div style='font-size:18px; font-weight:700;'>"
+            f"<div style='font-size:20px; font-weight:700;'>"
             f"<span style='color:{color}; margin-right:6px;'>●</span>"
             f"🏠 {row['name']}"
             f"</div>",
@@ -129,7 +129,7 @@ for _, row in properties_df.iterrows():
         )
 
         st.markdown(
-            f"<div style='font-size:15px; margin-top:4px;'>"
+            f"<div style='font-size:18px; margin-top:4px;'>"
             f"総戸数 {total}戸 ｜ 空室 {vacant}戸"
             f"</div>",
             unsafe_allow_html=True
