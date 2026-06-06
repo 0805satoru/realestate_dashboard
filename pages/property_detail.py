@@ -99,13 +99,7 @@ with tab1:
             col_icon, col_select = st.columns([1, 3])
             status = row["status"]
 
-            #色決め
-            if status == "入居中":
-                color = "#2ecc71"  # 緑
-                icon = "🟢"
-            else:
-                color = "#e74c3c"  # 赤
-                icon = "🔴"
+
             
             icon = "🟢" if row["status"] == "入居中" else "🔴"
             with col_icon:
