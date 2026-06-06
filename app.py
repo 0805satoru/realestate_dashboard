@@ -129,6 +129,11 @@ for _, row in properties_df.iterrows():
         )
 
         st.markdown(f"**🏠 {row['name']}**")
+        st.markdown(
+            f"<span style='color:{color}; font-weight:900;'>●</span> "
+            f"**🏠 {row['name']}**",
+            unsafe_allow_html=True
+        )
 
         st.write(f"総戸数 {total}戸 ｜ 空室 {vacant}戸")
         st.write(f"入居率 {rate:.0f}%")
