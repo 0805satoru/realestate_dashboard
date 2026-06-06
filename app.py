@@ -115,7 +115,7 @@ for _, row in properties_df.iterrows():
 
     with st.container(border=True):
 
-        col1, col2 = st.columns([5, 1])
+        col1, col2 = st.columns([3, 1])
 
         with col1:
             st.markdown(
