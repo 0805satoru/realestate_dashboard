@@ -98,36 +98,25 @@ with tab1:
 
             col_icon, col_select = st.columns([1, 3])
             status = row["status"]
-
-
+            if status == "入居中":
+                icon = "🟢"
+            else:
+                icon = "🔴"
             
-            icon = "🟢" if row["status"] == "入居中" else "🔴"
-            with col_icon:
-                st.markdown(icon)
-            with col_select:
-                new_status = st.selectbox(
-                    "",
-                    ["入居中", "空室"],
-                    label_visibility="collapsed",
-                    key=f"status_{row['room_id']}"
-            )
+            if st.button(
+                f"{icon} {status}",
+                key=f"status_btn_{row['room_id']}"
+                ):
+                
+                new_status = "空室" if status == "入居中" else "入居中"
+                cell = rooms_sheet.find(str(row["room_id"]))
+                rooms_sheet.update_cell(
+                    cell.row,
+                    5,
+                    new_status
+                )
+                st.rerun()
 
-            #st.markdown(
-            #    f"<span style='color:{color}; font-weight:700;'>{icon}</span>",
-            #    unsafe_allow_html=True
-            #)
-
-           
-
-        # 変更があった時だけ更新
-        if new_status != row["status"]:
-            cell = rooms_sheet.find(str(row["room_id"]))
-            rooms_sheet.update_cell(
-                cell.row,
-                5,  # status列（A=1 ... E=5）
-                new_status
-            )
-            st.rerun()
 
 with tab2:
 
