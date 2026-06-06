@@ -102,7 +102,6 @@ with tab1:
             f"</div>",
         unsafe_allow_html=True
         )
-            st.write(f"{row['room']}号室")
 
         with col2:
             status = row["status"]
