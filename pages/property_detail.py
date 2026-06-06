@@ -95,6 +95,8 @@ with tab1:
             st.write(f"{row['room']}号室")
 
         with col2:
+            status = row["status"]
+            
             #色決め
             if status == "入居中":
                 color = "#2ecc71"  # 緑
