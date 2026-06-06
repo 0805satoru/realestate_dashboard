@@ -113,9 +113,30 @@ with tab1:
             )
 
             st.markdown(
-                f"<span style='color:{color}; font-weight:700;'>{icon} {status}</span>",
+                f"<span style='color:{color}; font-weight:700;'>{icon}</span>",
                 unsafe_allow_html=True
             )
+
+
+
+                st.markdown(
+                    f"""
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <div style="font-size:18px;">
+                            {icon}
+                        </div>
+                        <div>
+                        """,
+                    unsafe_allow_html=True
+                )
+                new_status = st.selectbox(
+                    "状態",
+                    ["入居中", "空室"],
+                    index=0 if status == "入居中" else 1,
+                    key=f"status_{row['room_id']}"
+                )
+                st.markdown("</div></div>", unsafe_allow_html=True)
+
 
            
 
