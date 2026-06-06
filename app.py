@@ -115,6 +115,7 @@ for _, row in properties_df.iterrows():
             f"</div>",
             unsafe_allow_html=True
         )
+        st.write(f"総戸数 {total}戸 ｜ 空室 {vacant}戸")
         st.write(f"入居率 {rate:.0f}%")
         st.progress(rate / 100)
 
