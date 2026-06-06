@@ -107,7 +107,6 @@ with tab1:
                 color = "#e74c3c"  # 赤
                 icon = "🔴"
             
-            col_icon, col_select = st.columns([1, 2])
             icon = "🟢" if row["status"] == "入居中" else "🔴"
             with col_icon:
                 st.markdown(icon)
