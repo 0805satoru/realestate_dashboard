@@ -7,7 +7,7 @@ st.title("物件詳細")
 st.markdown(
     """
     <p style="font-size:28px; font-weight:bold; margin-bottom:20;">
-    🏢 不動産管理-物件詳細
+    🏢 不動産管理 ー 物件詳細
     </p>
     """,
     unsafe_allow_html=True
