@@ -4,6 +4,14 @@ from google.oauth2.service_account import Credentials
 import pandas as pd
 
 st.title("物件詳細")
+st.markdown(
+    """
+    <p style="font-size:28px; font-weight:bold; margin-bottom:20;">
+    🏢 不動産管理-物件詳細
+    </p>
+    """,
+    unsafe_allow_html=True
+)
 
 # Google認証
 scope = [
@@ -81,8 +89,6 @@ with tab1:
 
     st.subheader("部屋情報")
 
-    rooms_sheet = spreadsheet.worksheet("rooms")
-
     for i, row in property_rooms.iterrows():
 
         col1, col2 = st.columns([2, 1])
@@ -108,10 +114,7 @@ with tab1:
                 5,  # status列（A=1 ... E=5）
                 new_status
             )
-
             st.rerun()
-        
-    
 
 with tab2:
 
