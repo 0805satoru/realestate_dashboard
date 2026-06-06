@@ -98,6 +98,8 @@ for _, row in properties_df.iterrows():
         rooms[rooms["status"] == "入居中"]
     )
 
+    vacant = total - occupied
+
     rate = (occupied / total * 100) if total > 0 else 0
 
     with st.container(border=True):
