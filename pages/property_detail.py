@@ -95,11 +95,24 @@ with tab1:
             st.write(f"{row['room']}号室")
 
         with col2:
+            #色決め
+            if status == "入居中":
+                color = "#2ecc71"  # 緑
+                icon = "🟢"
+            else:
+                color = "#e74c3c"  # 赤
+                icon = "🔴"
+
             new_status = st.selectbox(
                 "状態",
                 ["入居中", "空室"],
                 index=0 if row["status"] == "入居中" else 1,
                 key=f"status_{row['room_id']}"
+            )
+
+            st.markdown(
+                f"<span style='color:{color}; font-weight:700;'>{icon} {status}</span>",
+                unsafe_allow_html=True
             )
 
         # 変更があった時だけ更新
