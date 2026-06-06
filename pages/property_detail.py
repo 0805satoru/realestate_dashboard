@@ -83,11 +83,7 @@ st.markdown(
 )
 
 st.markdown(
-    f"""
-    <div style="color:gray; font-size:18px; margin-top:4px;">
-        📍 {property_data['address']} ｜ 🏠 {property_data['units']}戸
-    </div>
-    """,
+    f"<div font-size:18px; margin-top:4px;">📍 {property_data['address']} ｜ 🏠 {property_data['units']}戸</div>,
     unsafe_allow_html=True
 )
 
