@@ -127,7 +127,7 @@ for _, row in properties_df.iterrows():
         )
 
         with col2:
-            if st.button("詳細を見る", key=row["property_id"]):
+            if st.button("詳細", key=row["property_id"]):
                 st.session_state["property_id"] = row["property_id"]
                 st.switch_page("pages/property_detail.py")
 
