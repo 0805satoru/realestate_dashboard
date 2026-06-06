@@ -144,7 +144,7 @@ for _, row in properties_df.iterrows():
         st.markdown(
             f"""
             <div style='margin-bottom:0px;'>
-                <span style='color:{color}; font-size:16px; font-weight:900; margin-right:6px;'>●</span>
+                <span style='color:{color}; font-size:20px; font-weight:900; margin-right:6px;'>●</span>
                 <span style='font-weight:600;'>入居率 {rate:.0f}%</span>
                 </div>
                 """,
