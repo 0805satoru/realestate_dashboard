@@ -110,10 +110,7 @@ with tab1:
                 key=f"status_{row['room_id']}"
             )
 
-            st.markdown(
-                f"<span style='color:{color}; font-weight:700;'>{icon}</span>",
-                unsafe_allow_html=True
-            )
+           
 
         # 変更があった時だけ更新
         if new_status != row["status"]:
