@@ -143,7 +143,7 @@ for _, row in properties_df.iterrows():
         )
         st.markdown(
             f"<span style='color:{color}; font-weight:900; margin-right:6px;'>●</span>"
-            f"rate / 100"
+            f"<div style='margin-bottom:0px;'>入居率 {rate:.0f}%</div>",
             f"</div>",
             unsafe_allow_html=True
         )
