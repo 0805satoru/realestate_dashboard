@@ -104,7 +104,29 @@ for _, row in properties_df.iterrows():
 
     rate = (occupied / total * 100) if total > 0 else 0
 
+    # 入居率の色判定
+    if rate >= 95:
+        color = "#22c55e"  # 緑（満室）
+    elif rate >= 80:
+        color = "#f59e0b"  # 黄（注意）
+    else:
+        color = "#ef4444"  # 赤（空室多い）
+
+
     with st.container(border=True):
+        
+        st.markdown(
+            f"""
+            <div style="
+                border:2px solid {color};
+                border-radius:10px;
+                padding:12px;
+                margin-bottom:10px;
+            ">
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
         st.markdown(f"**🏠 {row['name']}**")
 
