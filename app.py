@@ -74,20 +74,20 @@ st.markdown(
     **入居率** {occupancy_rate:.1f}%
     """
 )
-st.markdown("### 資産概要")
 
-st.container(border=True)
+with st.container(border=True):
 
-col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns(3)
 
-with col1:
-    st.metric("物件数", f"{total_properties}件")
+    with col1:
+        st.metric("物件数", f"{total_properties}件")
 
-with col2:
-    st.metric("総戸数", f"{total_units}戸")
+    with col2:
+        st.metric("総戸数", f"{total_units}戸")
 
-with col3:
-    st.metric("入居率", f"{occupancy_rate:.1f}%")
+    with col3:
+        st.metric("入居率", f"{occupancy_rate:.1f}%")
+
 
 # ======================
 # 所有物件
