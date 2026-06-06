@@ -107,26 +107,17 @@ with tab1:
                 color = "#e74c3c"  # 赤
                 icon = "🔴"
             
+            col_icon, col_select = st.columns([1, 2])
+            icon = "🟢" if row["status"] == "入居中" else "🔴"
             with col_icon:
-                st.markdown(
-                    f"<div style='font-size:20px; text-align:center;'>{icon}</div>",
-                    unsafe_allow_html=True
-                    )
-            
+                st.markdown(icon)
             with col_select:
-                new_status = st.selectbox(
-                    "状態",
+                st.selectbox(
+                    "",
                     ["入居中", "空室"],
-                    index=0 if row["status"] == "入居中" else 1,
+                    label_visibility="collapsed",
                     key=f"status_{row['room_id']}"
-                )
-                st.markdown("""
-                <style>
-                div[data-testid="stSelectbox"] {
-                    width: 140px;
-                }
-                </style>
-                """, unsafe_allow_html=True)
+            )
 
             #st.markdown(
             #    f"<span style='color:{color}; font-weight:700;'>{icon}</span>",
