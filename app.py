@@ -120,7 +120,6 @@ for _, row in properties_df.iterrows():
         with col1:
             st.markdown(
             f"<div style='font-size:20px; font-weight:700;'>"
-            f"<span style='color:{color}; font-weight:900; margin-right:6px;'>●</span>"
             f"🏠 {row['name']}"
             f"</div>",
             unsafe_allow_html=True
@@ -135,10 +134,6 @@ for _, row in properties_df.iterrows():
             f"<div style='font-size:18px; margin-top:4px;'>"
             f"総戸数 {total}戸 ｜ 空室 {vacant}戸"
             f"</div>",
-            unsafe_allow_html=True
-        )
-        st.markdown(
-            f"<div style='margin-bottom:0px;'>入居率 {rate:.0f}%</div>",
             unsafe_allow_html=True
         )
         st.markdown(
