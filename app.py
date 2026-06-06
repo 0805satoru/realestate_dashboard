@@ -147,7 +147,7 @@ for _, row in properties_df.iterrows():
                 <span style='color:{color}; font-weight:900; margin-right:6px;'>●</span>
                 <span style='font-weight:600;'>入居率 {rate:.0f}%</span>
                 </div>
-                """
+                """,
             unsafe_allow_html=True
         )
         st.progress(rate / 100)
