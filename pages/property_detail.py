@@ -95,8 +95,6 @@ with tab1:
             st.write(f"{row['room']}号室")
 
         with col2:
-
-            col_icon, col_select = st.columns([1, 3])
             status = row["status"]
             if status == "入居中":
                 icon = "🟢"
@@ -108,15 +106,15 @@ with tab1:
                 key=f"status_btn_{row['room_id']}"
                 ):
                 
+                # 変更があった時だけ更新
                 new_status = "空室" if status == "入居中" else "入居中"
                 cell = rooms_sheet.find(str(row["room_id"]))
                 rooms_sheet.update_cell(
                     cell.row,
-                    5,
+                    5, # status列（A=1 ... E=5）
                     new_status
                 )
                 st.rerun()
-
 
 with tab2:
 
