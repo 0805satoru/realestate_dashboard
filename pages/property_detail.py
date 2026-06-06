@@ -84,8 +84,6 @@ tab1, tab2 = st.tabs([
 ])
 
 with tab1:
-
-    st.subheader("部屋情報")
     st.markdown(
             f"<div style='font-size:20px; font-weight:700;'>"
             f"部屋情報"
@@ -98,6 +96,12 @@ with tab1:
         col1, col2 = st.columns([2, 1])
 
         with col1:
+            st.markdown(
+            f"<div style='font-size:18px; font-weight:600;'>"
+            f"{row['room']}号室"
+            f"</div>",
+        unsafe_allow_html=True
+        )
             st.write(f"{row['room']}号室")
 
         with col2:
