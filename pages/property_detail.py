@@ -105,7 +105,7 @@ with tab1:
             with col_icon:
                 st.markdown(icon)
             with col_select:
-                st.selectbox(
+                new_status = st.selectbox(
                     "",
                     ["入居中", "空室"],
                     label_visibility="collapsed",
