@@ -150,8 +150,3 @@ for _, row in properties_df.iterrows():
             unsafe_allow_html=True
         )
         st.progress(rate / 100)
-
-        if st.button("詳細を見る", key=row["property_id"]):
-
-            st.session_state["property_id"] = row["property_id"]
-            st.switch_page("pages/property_detail.py")
