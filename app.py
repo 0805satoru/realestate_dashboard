@@ -115,17 +115,17 @@ for _, row in properties_df.iterrows():
 
     with st.container(border=True):
 
-        col1, col2 = st.columns([6, 1])
+        #col1, col2 = st.columns([6, 1])
 
-        with col1:
-            st.markdown(
-            f"<div style='font-size:10px; font-weight:700;'>"
-            f"🏠 {row['name']}"
-            f"</div>",
-            unsafe_allow_html=True
-        )
+        #with col1:
+            #st.markdown(
+            #f"<div style='font-size:10px; font-weight:700;'>"
+            #f"🏠 {row['name']}"
+            #f"</div>",
+            #unsafe_allow_html=True
+        #)
 
-        with col2:
+        #with col2:
             #if st.button("詳細", key=row["property_id"]):
                 #st.session_state["property_id"] = row["property_id"]
                 #st.switch_page("pages/property_detail.py")
