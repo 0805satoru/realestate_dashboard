@@ -105,17 +105,17 @@ with tab1:
                 color = "#e74c3c"  # 赤
                 icon = "🔴"
 
-            new_status = st.selectbox(
-                "状態",
-                ["入居中", "空室"],
-                index=0 if row["status"] == "入居中" else 1,
-                key=f"status_{row['room_id']}"
-            )
+            #new_status = st.selectbox(
+            #    "状態",
+            #    ["入居中", "空室"],
+            #    index=0 if row["status"] == "入居中" else 1,
+            #    key=f"status_{row['room_id']}"
+            #)
 
-            st.markdown(
-                f"<span style='color:{color}; font-weight:700;'>{icon}</span>",
-                unsafe_allow_html=True
-            )
+            #st.markdown(
+            #    f"<span style='color:{color}; font-weight:700;'>{icon}</span>",
+            #    unsafe_allow_html=True
+            #)
 
 
             st.markdown(
