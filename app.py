@@ -3,7 +3,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
 
-st.set_page_config(page_title="物件管理", layout="wide")
+st.set_page_config(page_title="不動産管理", layout="wide")
 
 st.markdown(
     """
