@@ -95,6 +95,8 @@ with tab1:
             st.write(f"{row['room']}号室")
 
         with col2:
+
+            col_icon, col_select = st.columns([1, 4])
             status = row["status"]
 
             #色決め
@@ -104,38 +106,25 @@ with tab1:
             else:
                 color = "#e74c3c"  # 赤
                 icon = "🔴"
-
-            #new_status = st.selectbox(
-            #    "状態",
-            #    ["入居中", "空室"],
-            #    index=0 if row["status"] == "入居中" else 1,
-            #    key=f"status_{row['room_id']}"
-            #)
+            
+            with col_icon:
+                st.markdown(
+                    f"<div style='font-size:20px; text-align:center;'>{icon}</div>",
+                    unsafe_allow_html=True
+                    )
+            
+            with col_select:
+                new_status = st.selectbox(
+                    "状態",
+                    ["入居中", "空室"],
+                    index=0 if row["status"] == "入居中" else 1,
+                    key=f"status_{row['room_id']}"
+                )
 
             #st.markdown(
             #    f"<span style='color:{color}; font-weight:700;'>{icon}</span>",
             #    unsafe_allow_html=True
             #)
-
-
-            st.markdown(
-                f"""
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <div style="font-size:18px;">
-                        {icon}
-                    </div>
-                    <div>
-                    """,
-                unsafe_allow_html=True
-            )
-            new_status = st.selectbox(
-                "状態",
-                ["入居中", "空室"],
-                index=0 if status == "入居中" else 1,
-                key=f"status_{row['room_id']}"
-            )
-            st.markdown("</div></div>", unsafe_allow_html=True)
-
 
            
 
