@@ -71,9 +71,9 @@ st.markdown(
 with st.container(border=True):
     st.markdown(
         f"""
-        **物件数：** {total_properties}件 ｜ 
-        **総戸数：** {total_units}戸 ｜ 
-        **入居率：** {occupancy_rate:.0f}%
+        **物件数:** {total_properties}件 ｜ 
+        **総戸数:** {total_units}戸 ｜ 
+        **入居率:** {occupancy_rate:.0f}%
         """
     )
 
