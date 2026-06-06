@@ -122,20 +122,6 @@ for _, row in properties_df.iterrows():
         unsafe_allow_html=True
         )
 
-        col1, col2, col3 = st.columns([2, 2, 1])
-        
-        with col1:
-            st.write(f"総戸数 {total}戸")
-        
-        with col2:
-            st.write(f"空室 {vacant}戸")
-            
-        with col3:
-            if st.button("詳細", key=f"detail_{row['property_id']}"):
-                st.session_state["property_id"] = row["property_id"]
-                st.switch_page("pages/property_detail.py")
-                
-
         st.markdown(
             f"<div style='font-size:18px; margin-top:4px;'>"
             f"総戸数 {total}戸 ｜ 空室 {vacant}戸"
@@ -153,3 +139,7 @@ for _, row in properties_df.iterrows():
             unsafe_allow_html=True
         )
         st.progress(rate / 100)
+
+        if st.button("詳細を見る", key=f"detail_{row['property_id']}"):
+                st.session_state["property_id"] = row["property_id"]
+                st.switch_page("pages/property_detail.py")
