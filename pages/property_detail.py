@@ -3,11 +3,10 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
 
-st.title("物件詳細")
 st.markdown(
     """
     <p style="font-size:28px; font-weight:bold; margin-bottom:20;">
-    🏢 不動産管理 ー 物件詳細
+    🏢 不動産管理 - 物件詳細
     </p>
     """,
     unsafe_allow_html=True
@@ -23,9 +22,7 @@ creds = Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
     scopes=scope
 )
-
 client = gspread.authorize(creds)
-
 spreadsheet = client.open("不動産管理DB")
 
 # properties取得
@@ -48,27 +45,22 @@ if property_id is None:
 property_data = properties_df[
     properties_df["property_id"] == property_id
 ].iloc[0]
-
 # 対象部屋
 property_rooms = rooms_df[
     rooms_df["property_id"] == property_id
 ]
-
 # 入居率計算
 occupied_count = len(
     property_rooms[
         property_rooms["status"] == "入居中"
     ]
 )
-
 vacant_count = len(
     property_rooms[
         property_rooms["status"] == "空室"
     ]
 )
-
 total_rooms = len(property_rooms)
-
 occupancy_rate = (
     occupied_count / total_rooms * 100
     if total_rooms > 0
@@ -78,6 +70,21 @@ occupancy_rate = (
 # ヘッダー
 st.header(property_data["name"])
 st.markdown(f"📍 **{property_data['address']}**  ｜  🏠 {property_data['units']}戸")
+
+st.markdown(
+    f"""
+    <div style="margin-bottom:10px;">
+        <div style="font-size:22px; font-weight:800;">
+            🏠 {property_data['name']}
+        </div>
+
+        <div style="color:gray; font-size:13px; margin-top:4px;">
+            📍 {property_data['address']} ｜ 🏢 {property_data['units']}戸
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # タブ
 tab1, tab2 = st.tabs([
