@@ -96,7 +96,7 @@ with tab1:
 
         with col2:
             status = row["status"]
-            
+
             #色決め
             if status == "入居中":
                 color = "#2ecc71"  # 緑
@@ -110,6 +110,11 @@ with tab1:
                 ["入居中", "空室"],
                 index=0 if row["status"] == "入居中" else 1,
                 key=f"status_{row['room_id']}"
+            )
+
+            st.markdown(
+                f"<span style='color:{color}; font-weight:700;'>{icon} {status}</span>",
+                unsafe_allow_html=True
             )
 
            
