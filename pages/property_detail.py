@@ -124,6 +124,8 @@ with tab1:
                     new_status
                 )
                 st.rerun()
+            
+        st.write(f"💰 {row['rent']:,}円/月")
 
 with tab2:
 
