@@ -84,10 +84,10 @@ tab1, tab2 = st.tabs([
 ])
 
 with tab1:
-    #st.markdown(
-    #    f"<div style='font-size:20px; font-weight:700;'>部屋情報</div>",
-    #    unsafe_allow_html=True
-    #)
+    st.markdown(
+        f"<div style='font-size:20px; font-weight:700;'>部屋情報</div>",
+        unsafe_allow_html=True
+    )
 
     for i, row in property_rooms.iterrows():
         with st.container(border=True):
