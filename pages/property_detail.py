@@ -78,9 +78,10 @@ st.markdown(
 )
 
 # タブ
-tab1, tab2 = st.tabs([
+tab1, tab2, tab3 = st.tabs([
     "部屋情報",
-    "物件詳細"
+    "物件詳細",
+    "購入情報"
 ])
 
 with tab1:
