@@ -74,7 +74,7 @@ st.markdown(
 )
 st.markdown(
     f"""
-    <div style='font-size:18px; font-weight:700; margin-top:4px;'>
+    <div style='font-size:18px; font-weight:600; margin-top:4px;'>
         📍 {property_data['address']} ｜ 🏠 {property_data['units']}戸
     </div>
     """,
