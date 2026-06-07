@@ -110,7 +110,7 @@ with tab1:
             else:
                 icon = "🔴"
             
-            st.write(f"💰 {row['rent']:,}円/月")
+            st.write(f"💰 {row['total_rent']:,}円/月")
             
             if st.button(
                 f"{icon} {status}",
