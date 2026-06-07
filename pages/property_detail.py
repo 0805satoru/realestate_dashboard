@@ -102,8 +102,6 @@ with tab1:
             f"</div>",
         unsafe_allow_html=True
         )
-        st.write(f"💰 {row['rent']:,}円/月")
-
 
         with col2:
             status = row["status"]
@@ -115,7 +113,10 @@ with tab1:
             if st.button(
                 f"{icon} {status}",
                 key=f"status_btn_{row['room_id']}"
-                ):
+            ):
+            
+            st.write(f"💰 {row['rent']:,}円/月")
+
                 
                 # 変更があった時だけ更新
                 new_status = "空室" if status == "入居中" else "入居中"
@@ -126,8 +127,7 @@ with tab1:
                     new_status
                 )
                 st.rerun()
-                
-        st.write(f"💰 {row['rent']:,}円/月")
+
 
 with tab2:
 
