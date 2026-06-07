@@ -125,7 +125,6 @@ with tab1:
                 )
                 st.rerun()
             
-            st.write(row)
             st.write(f"💰 {row['total_rent']}円/月")
 
 
