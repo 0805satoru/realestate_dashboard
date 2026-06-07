@@ -92,40 +92,40 @@ with tab1:
         )
 
     for i, row in property_rooms.iterrows():
+        with st.container(border=True):
 
-        col1, col2 = st.columns([2, 1])
+            col1, col2 = st.columns([2, 1])
+            with col1:
+                st.markdown(
+                f"<div style='font-size:18px; font-weight:600;'>"
+                f"{row['room']}号室"
+                f"</div>",
+            unsafe_allow_html=True
+            )
 
-        with col1:
-            st.markdown(
-            f"<div style='font-size:18px; font-weight:600;'>"
-            f"{row['room']}号室"
-            f"</div>",
-        unsafe_allow_html=True
-        )
+            with col2:
+                status = row["status"]
+                if status == "入居中":
+                    icon = "🟢"
+                else:
+                    icon = "🔴"
+                
+                if st.button(
+                    f"{icon} {status}",
+                    key=f"status_btn_{row['room_id']}"
+                ):
 
-        with col2:
-            status = row["status"]
-            if status == "入居中":
-                icon = "🟢"
-            else:
-                icon = "🔴"
-            
-            if st.button(
-                f"{icon} {status}",
-                key=f"status_btn_{row['room_id']}"
-            ):
-
-                # 変更があった時だけ更新
-                new_status = "空室" if status == "入居中" else "入居中"
-                cell = rooms_sheet.find(str(row["room_id"]))
-                rooms_sheet.update_cell(
-                    cell.row,
-                    5, # status列（A=1 ... E=5）
-                    new_status
-                )
-                st.rerun()
-            
-            st.write(f"💰 {row['total_rent']}円/月")
+                    # 変更があった時だけ更新
+                    new_status = "空室" if status == "入居中" else "入居中"
+                    cell = rooms_sheet.find(str(row["room_id"]))
+                    rooms_sheet.update_cell(
+                        cell.row,
+                        5, # status列（A=1 ... E=5）
+                        new_status
+                    )
+                    st.rerun()
+                
+                st.write(f"💰 {row['total_rent']}円/月")
 
 
 with tab2:
