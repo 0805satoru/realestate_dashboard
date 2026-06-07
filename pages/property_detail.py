@@ -129,20 +129,17 @@ with tab2:
         unsafe_allow_html=True
     )
 
-    #st.markdown(
+    st.markdown(
     #    f"<div style='font-size:18px; font-weight:600;'>"
     #    f"総戸数 {units}戸 ｜ 入居中 {occupied_count}戸 ｜ 空室 {vacant_count}戸"
     #    f"</div>",
     #    unsafe_allow_html=True
-    #)
+    )
 
     st.write("戸数")
     st.write(property_data["units"])
 
-    st.metric(
-        "入居率",
-        f"{occupancy_rate:.1f}%"
-    )
+
 
     col1, col2 = st.columns(2)
 
