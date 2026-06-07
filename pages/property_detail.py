@@ -110,14 +110,13 @@ with tab1:
             else:
                 icon = "🔴"
             
+            st.write(f"💰 {row['rent']:,}円/月")
+            
             if st.button(
                 f"{icon} {status}",
                 key=f"status_btn_{row['room_id']}"
-                ):
-            
-            st.write(f"💰 {row['rent']:,}円/月")
+            ):
 
-                
                 # 変更があった時だけ更新
                 new_status = "空室" if status == "入居中" else "入居中"
                 cell = rooms_sheet.find(str(row["room_id"]))
