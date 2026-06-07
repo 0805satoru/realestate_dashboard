@@ -73,11 +73,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.markdown(
-    f"""
-    <div style='font-size:16px; font-weight:500; margin-top:2px;'>
-        📍 {property_data['address']} ｜ 🏠 {property_data['units']}戸
-    </div>
-    """,
+    f"<div style='font-size:16px; margin-top:4px;'>📍 {property_data['address']} ｜ 🏠 {property_data['units']}戸</div>",
     unsafe_allow_html=True
 )
 
