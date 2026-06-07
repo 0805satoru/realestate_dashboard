@@ -94,7 +94,7 @@ with tab1:
     for i, row in property_rooms.iterrows():
         with st.container(border=True):
 
-            col1, col2 = st.columns([2, 1])
+            col1, col2 = st.columns([3, 2])
             with col1:
                 st.markdown(
                 f"<div style='font-size:20px; font-weight:700;'>"
