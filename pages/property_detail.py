@@ -102,14 +102,7 @@ with tab1:
                 f"</div>",
             unsafe_allow_html=True
             )
-                st.markdown(
-                f"<div style='font-size:18px; font-weight:600;'>"
-                f"💰 {row['total_rent']}円/月"
-                f"</div>",
-            unsafe_allow_html=True
-            )
 
-            with col2:
                 status = row["status"]
                 if status == "入居中":
                     icon = "🟢"
@@ -130,8 +123,15 @@ with tab1:
                         new_status
                     )
                     st.rerun()
+
+            with col2:
+                st.markdown(
+                f"<div style='font-size:18px; font-weight:600;'>"
+                f"💰 {row['total_rent']}円/月"
+                f"</div>",
+            unsafe_allow_html=True
+            )
                 
-                st.write(f"💰 {row['total_rent']}円/月")
 
 
 with tab2:
