@@ -131,7 +131,7 @@ with tab2:
 
     st.markdown(
         f"<div style='font-size:18px; font-weight:600;'>"
-        f"総戸数 {units}戸 ｜ 入居中 {occupied_count}戸 ｜ 空室 {vacant_count}戸"
+        f"総戸数 {total_units}戸 ｜ 入居中 {occupied_count}戸 ｜ 空室 {vacant_count}戸"
         f"</div>",
         unsafe_allow_html=True
     )
