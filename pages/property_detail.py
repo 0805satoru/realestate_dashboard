@@ -84,26 +84,6 @@ tab1, tab2 = st.tabs([
 ])
 
 with tab1:
-
-    st.markdown(
-    f"""
-    <div style="
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-    ">
-        <span style="font-size:20px; font-weight:700;">
-            {row['room']}号室
-        </span>
-
-        <span style="font-size:18px; font-weight:600;">
-            {row['total_rent']}
-        </span>
-    </div>
-    """,
-    unsafe_allow_html=True
-    )
-    
     st.markdown(
             f"<div style='font-size:20px; font-weight:700;'>"
             f"部屋情報"
@@ -113,6 +93,28 @@ with tab1:
 
     for i, row in property_rooms.iterrows():
         with st.container(border=True):
+
+                st.markdown(
+                    f"""
+                    <div style="
+                        display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                    ">
+                        <span style="font-size:20px; font-weight:700;">
+                            {row['room']}号室
+                        </span>
+
+                        <span style="font-size:18px; font-weight:600;">
+                            {row['total_rent']}
+                        </span>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+
+
 
             col1, col2 = st.columns([2, 1])
             with col1:
