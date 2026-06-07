@@ -73,7 +73,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.markdown(
-    f"<div font-size:18px; margin-top:4px;'>📍 {property_data['address']} ｜ 🏠 {property_data['units']}戸</div>",
+    f"<div font-size:18px; font-weight:600; margin-top:4px;'>📍 {property_data['address']} ｜ 🏠 {property_data['units']}戸</div>",
     unsafe_allow_html=True
 )
 
@@ -96,7 +96,7 @@ with tab1:
             st.markdown(
             f"""
             <span style="font-size:18px;font-weight:700;">{row['room']}号室</span>
-            <span style="font-size:16px;font-weight:500;">　　💰総賃料  {row['total_rent']}/月</span>
+            <span style="font-size:16px;font-weight:500;">　　💰総賃料 {row['total_rent']}/月</span>
             """,
             unsafe_allow_html=True
             )
