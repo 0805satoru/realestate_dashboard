@@ -102,6 +102,8 @@ with tab1:
             f"</div>",
         unsafe_allow_html=True
         )
+        st.write(f"💰 {row['rent']:,}円/月")
+
 
         with col2:
             status = row["status"]
@@ -125,7 +127,7 @@ with tab1:
                 )
                 st.rerun()
                 
-                st.write(f"💰 {row['rent']:,}円/月")
+        st.write(f"💰 {row['rent']:,}円/月")
 
 with tab2:
 
