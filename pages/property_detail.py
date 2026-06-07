@@ -90,6 +90,9 @@ with tab1:
             f"</div>",
         unsafe_allow_html=True
         )
+    
+
+    st.write(f"💰 {row['total_rent']:,}円/月")
 
     for i, row in property_rooms.iterrows():
 
@@ -109,8 +112,6 @@ with tab1:
                 icon = "🟢"
             else:
                 icon = "🔴"
-            
-            st.write(f"💰 {row['total_rent']:,}円/月")
             
             if st.button(
                 f"{icon} {status}",
