@@ -96,7 +96,7 @@ with tab1:
             st.markdown(
             f"""
             <span style="font-size:20px;font-weight:700;">{row['room']}号室</span>
-            <span style="font-size:16px;">　💰 {row['total_rent']}</span>
+            <span style="font-size:18px;font-weight:500;">　💰 {row['total_rent']}</span>
             """,
             unsafe_allow_html=True
         )
