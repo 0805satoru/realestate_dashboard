@@ -113,7 +113,7 @@ with tab1:
             if st.button(
                 f"{icon} {status}",
                 key=f"status_btn_{row['room_id']}"
-            ):
+                ):
             
             st.write(f"💰 {row['rent']:,}円/月")
 
