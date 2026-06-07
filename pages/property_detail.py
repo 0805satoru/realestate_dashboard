@@ -93,6 +93,13 @@ with tab1:
 
     for i, row in property_rooms.iterrows():
         with st.container(border=True):
+            st.markdown(
+            f"""
+            <span style="font-size:20px;font-weight:700;">{row['room']}号室</span>
+            <span style="font-size:16px;">　💰 {row['total_rent']}</span>
+            """,
+            unsafe_allow_html=True
+        )
 
             col1, col2 = st.columns([3, 2])
             with col1:
