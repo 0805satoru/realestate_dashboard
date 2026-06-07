@@ -85,7 +85,7 @@ tab1, tab2 = st.tabs([
 
 with tab1:
     #st.markdown(
-    #    f"<div style='font-size:32px; font-weight:700;'>部屋情報</div>",
+    #    f"<div style='font-size:20px; font-weight:700;'>部屋情報</div>",
     #    unsafe_allow_html=True
     #)
 
