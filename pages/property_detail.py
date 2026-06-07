@@ -136,9 +136,6 @@ with tab2:
         unsafe_allow_html=True
     )
 
-    st.write("戸数")
-    st.write(property_data["units"])
-
 
 st.divider()
 
