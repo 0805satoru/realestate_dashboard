@@ -99,45 +99,28 @@ with tab1:
             <span style="font-size:18px;font-weight:500;">　💰 {row['total_rent']}</span>
             """,
             unsafe_allow_html=True
-        )
-
-            col1, col2 = st.columns([3, 2])
-            with col1:
-                st.markdown(
-                f"<div style='font-size:20px; font-weight:700;'>"
-                f"{row['room']}号室"
-                f"</div>",
-            unsafe_allow_html=True
             )
 
-                status = row["status"]
-                if status == "入居中":
-                    icon = "🟢"
-                else:
-                    icon = "🔴"
-                
-                if st.button(
-                    f"{icon} {status}",
-                    key=f"status_btn_{row['room_id']}"
-                ):
+            status = row["status"]
+            if status == "入居中":
+                icon = "🟢"
+            else:
+                icon = "🔴"
+            
+            if st.button(
+                f"{icon} {status}",
+                key=f"status_btn_{row['room_id']}"
+            ):
 
-                    # 変更があった時だけ更新
-                    new_status = "空室" if status == "入居中" else "入居中"
-                    cell = rooms_sheet.find(str(row["room_id"]))
-                    rooms_sheet.update_cell(
-                        cell.row,
-                        5, # status列（A=1 ... E=5）
-                        new_status
-                    )
-                    st.rerun()
-
-            with col2:
-                st.markdown(
-                f"<div style='font-size:18px; font-weight:600;'>"
-                f"💰 {row['total_rent']}円/月"
-                f"</div>",
-            unsafe_allow_html=True
-            )
+                # 変更があった時だけ更新
+                new_status = "空室" if status == "入居中" else "入居中"
+                cell = rooms_sheet.find(str(row["room_id"]))
+                rooms_sheet.update_cell(
+                    cell.row,
+                    5, # status列（A=1 ... E=5）
+                    new_status
+                )
+                st.rerun()
                 
 
 
