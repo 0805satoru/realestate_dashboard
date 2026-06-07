@@ -90,9 +90,6 @@ with tab1:
             f"</div>",
         unsafe_allow_html=True
         )
-    
-
-    st.write(f"💰 {row['total_rent']:,}円/月")
 
     for i, row in property_rooms.iterrows():
 
