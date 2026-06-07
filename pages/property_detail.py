@@ -124,6 +124,8 @@ with tab1:
                     new_status
                 )
                 st.rerun()
+            
+            st.write(row)
 
 
 with tab2:
