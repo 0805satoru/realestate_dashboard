@@ -140,21 +140,6 @@ with tab2:
     st.write(property_data["units"])
 
 
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.metric(
-            "入居中",
-            occupied_count
-        )
-
-    with col2:
-        st.metric(
-            "空室",
-            vacant_count
-        )
-
 st.divider()
 
 if st.button("← 所有物件へ戻る"):
