@@ -137,6 +137,14 @@ with tab2:
         unsafe_allow_html=True
     )
 
+    current_income = property_rooms[
+    property_rooms["status"] == "入居中"
+    ]["total_rent"].sum()
+
+    full_income = property_rooms["total_rent"].sum()
+
+    vacancy_loss = full_income - current_income
+
     st.markdown(
         f"""
         <div style='font-size:18px; font-weight:600;'>
