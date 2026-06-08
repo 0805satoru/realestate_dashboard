@@ -137,6 +137,17 @@ with tab2:
         unsafe_allow_html=True
     )
 
+    st.markdown(
+        f"""
+        <div style='font-size:18px; font-weight:600;'>
+            💰 現在収入：{current_income:,.0f}円/月<br>
+            🏠 満室想定：{full_income:,.0f}円/月<br>
+            ⚠️ 空室損失：{vacancy_loss:,.0f}円/月
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 st.divider()
 
