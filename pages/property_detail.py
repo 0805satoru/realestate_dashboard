@@ -40,6 +40,11 @@ property_detail_sheet = spreadsheet.worksheet("property_detail")
 property_detail_data = property_detail_sheet.get_all_records()
 property_detail_df = pd.DataFrame(property_detail_data)
 
+# 購入情報取得
+purchase_sheet = spreadsheet.worksheet("purchase")
+purchase_data = purchase_sheet.get_all_records()
+purchase_df = pd.DataFrame(purchase_data)
+
 
 property_id = st.session_state.get("property_id")
 
@@ -59,6 +64,10 @@ property_rooms = rooms_df[
 # 物件詳細
 detail = property_detail_df[
     property_detail_df["property_id"] == property_id
+].iloc[0]
+# 購入情報
+purchase = purchase_df[
+    purchase_df["property_id"] == property_id
 ].iloc[0]
 
 # 入居率計算
@@ -189,6 +198,51 @@ with tab2:
     st.markdown(f"🏢 階数：{detail['階数']}階")
 
     st.divider()
+
+with tab3:
+
+    st.markdown(
+        "<div style='font-size:20px; font-weight:700;'>購入情報</div>",
+        unsafe_allow_html=True
+    )
+
+    st.divider()
+
+    st.markdown(
+        "<div style='font-size:18px; font-weight:600;'>購入情報</div>",
+        unsafe_allow_html=True
+    )
+
+    st.write(f"売買価格：{purchase['売買価格']}")
+    st.write(f"諸経費：{purchase['諸経費']}")
+    st.write(f"総投資額：{purchase['総投資額']}")
+    st.write(f"自己資金：{purchase['自己資金']}")
+    st.write(f"購入日：{purchase['購入日']}")
+
+    st.divider()
+
+    st.markdown(
+        "<div style='font-size:18px; font-weight:600;'>融資情報</div>",
+        unsafe_allow_html=True
+    )
+
+    st.write(f"金融機関：{purchase['金融機関']}")
+    st.write(f"借入額：{purchase['借入額']}")
+    st.write(f"返済期間：{purchase['返済期間']}年")
+    st.write(f"借入金利：{purchase['借入金利']}%")
+
+    st.divider()
+
+    st.markdown(
+        "<div style='font-size:18px; font-weight:600;'>返済状況</div>",
+        unsafe_allow_html=True
+    )
+
+    st.write(f"月返済額：{purchase['月返済額']}")
+    st.write(f"残債：{purchase['残債']}")
+    st.write(f"返済額：{purchase['返済額']}")
+
+    
 
 if st.button("← 所有物件へ戻る"):
     st.switch_page("app.py")
