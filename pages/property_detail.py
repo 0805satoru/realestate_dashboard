@@ -35,6 +35,12 @@ rooms_sheet = spreadsheet.worksheet("rooms")
 rooms_data = rooms_sheet.get_all_records()
 rooms_df = pd.DataFrame(rooms_data)
 
+# property_detail取得
+property_detail_sheet = spreadsheet.worksheet("property_detail")
+property_detail_data = property_detail_sheet.get_all_records()
+property_detail_df = pd.DataFrame(property_detail_data)
+
+
 property_id = st.session_state.get("property_id")
 
 if property_id is None:
@@ -49,6 +55,12 @@ property_data = properties_df[
 property_rooms = rooms_df[
     rooms_df["property_id"] == property_id
 ]
+
+# 物件詳細
+detail = property_detail_df[
+    property_detail_df["property_id"] == property_id
+].iloc[0]
+
 # 入居率計算
 occupied_count = len(
     property_rooms[
@@ -156,6 +168,7 @@ with tab2:
         unsafe_allow_html=True
     )
 
+    st.write(detail)
 
 st.divider()
 
