@@ -176,6 +176,12 @@ with tab2:
     )
     st.markdown(f"📍 {detail['住所']}")
     st.markdown(f"📅 建築年月：{detail['建築年月']}")
+    
+    from datetime import datetime
+    import pandas as pd
+    build_date = pd.to_datetime(detail["建築年月"])
+    age = datetime.now().year - build_date.year
+    st.markdown(f"🏚️ 築年数：{age}年")
 
     st.markdown(f"📐 土地面積：{detail['土地面積']}㎡")
     st.markdown(f"🏠 延床面積：{detail['延床面積']}㎡")
