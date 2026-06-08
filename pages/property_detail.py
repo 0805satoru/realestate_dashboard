@@ -145,9 +145,6 @@ with tab2:
 
     vacancy_loss = full_income - current_income
 
-    st.write(current_income)
-    st.write(type(current_income))
-
     st.markdown(
         f"""
         <div style='font-size:18px; font-weight:600;'>
