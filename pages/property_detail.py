@@ -238,10 +238,63 @@ with tab3:
         unsafe_allow_html=True
     )
 
-    st.write(f"月返済額：{purchase['月返済額']}")
-    st.write(f"残債：{purchase['残債']}")
-    st.write(f"累計返済額：{purchase['累計返済額']}")
+    purchase = purchase_df[
+        purchase_df["property_id"] == property_id
+    ].iloc[0]
 
+    loan_amount = float(purchase["借入額"])
+    annual_rate = float(purchase["借入金利"])
+    years = int(purchase["返済期間"])
+
+    purchase_date = pd.to_datetime(
+        purchase["購入日"]
+    )
+
+    months_elapsed = (
+        (datetime.now().year - purchase_date.year) * 12
+        + (datetime.now().month - purchase_date.month)
+    )
+
+    months_elapsed = max(months_elapsed, 0)
+
+    monthly_rate = annual_rate / 100 / 12
+    total_months = years * 12
+
+    remaining_balance = (
+        loan_amount
+        * (
+            (
+                (1 + monthly_rate) ** total_months
+                - (1 + monthly_rate) ** months_elapsed
+            )
+            /
+            (
+                (1 + monthly_rate) ** total_months
+                - 1
+            )
+        )
+    )
+
+    principal_repaid = (
+        loan_amount
+        - remaining_balance
+    )
+
+    total_paid = (
+        float(purchase["月返済額"])
+        * months_elapsed
+    )
+
+    st.write(f"月返済額：{purchase['月返済額']}")
+    st.write(
+        f"残債：¥{remaining_balance:,.0f}"
+    )
+    st.write(
+        f"累計元金返済額：¥{principal_repaid:,.0f}"
+    )
+    st.write(
+        f"累計支払額：¥{total_paid:,.0f}"
+    )
 
 
 if st.button("← 所有物件へ戻る"):
