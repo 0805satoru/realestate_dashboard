@@ -240,7 +240,7 @@ with tab3:
 
     st.write(f"月返済額：{purchase['月返済額']}")
     st.write(f"残債：{purchase['残債']}")
-    st.write(f"返済額：{purchase['累計返済額']}")
+    st.write(f"累計返済額：{purchase['累計返済額']}")
 
 
 
