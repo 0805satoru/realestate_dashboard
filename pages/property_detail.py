@@ -206,8 +206,6 @@ with tab3:
         unsafe_allow_html=True
     )
 
-    st.write(purchase)
-
     st.divider()
 
     st.markdown(
