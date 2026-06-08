@@ -168,9 +168,21 @@ with tab2:
         unsafe_allow_html=True
     )
 
-    st.write(detail)
+    st.divider()
 
-st.divider()
+    st.markdown(
+        "<div style='font-size:20px; font-weight:700;'>基本情報</div>",
+        unsafe_allow_html=True
+    )
+    st.markdown(f"📍 {detail['住所']}")
+    st.markdown(f"📅 建築年月：{detail['建築年月']}")
+
+    st.markdown(f"📐 土地面積：{detail['土地面積']}㎡")
+    st.markdown(f"🏠 延床面積：{detail['延床面積']}㎡")
+    st.markdown(f"🏗️ 構造：{detail['構造']}")
+    st.markdown(f"🏢 階数：{detail['階数']}階")
+
+    st.divider()
 
 if st.button("← 所有物件へ戻る"):
     st.switch_page("app.py")
